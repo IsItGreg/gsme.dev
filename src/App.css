@@ -1,38 +1,139 @@
-.App {
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #f2f1f0;
+}
+
+section#work {
+  background-color: #EBE9E8;
+}
+
+.jumbotron > .slide-title {
+  top: 25%;
+  position: fixed;
+  text-align: right;
+  width: fit-content;
+  text-align: right;
+}
+
+.jumbotron .slide-title-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7790a6;
+  width: fit-content;
+  color: #f2f1f0;
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron h1 {
+    font-size: 5em;
+  }
+  .jumbotron .slide-title-subtitle {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 350px) {
+  .jumbotron h1 {
+    font-size: 2.4rem;
+  }
+}
+
+.jumbotron .slide-title-subtitle {
+  color: #f2f1f0;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.title-red {
+  color: #7790a6 !important;
+}
+
+.jumbotron {
+  margin: 0;
+  padding: 0;
+  background-color: #010d26;
+}
+
+.arrow {
+  color: #7790a6;
+  z-index: 100;
   text-align: center;
+  bottom: 5%;
+  position: absolute;
+  font-size: 5em;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.arrow svg {
+  color: #7790a6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.arrow svg:hover {
+  color: #485f73;
+  cursor: pointer;
+}
+
+.slide_title {
+  margin-right: 5%;
+  white-space: nowrap;
+}
+
+header {
+  text-align: center;
+  color: #010d26;
+  /* border-bottom: 1px dashed #7790A6; */
+  margin-bottom: 40px;
+}
+
+header h2 {
+  font-size: 3em;
+}
+
+.place-name h3 {
+  color: #485f73;
+}
+
+.place-name p {
+  color: #7790a6;
+}
+
+.place-name {
+  text-align: right;
+  border-right: 1px dashed #7790a6;
+}
+
+.place p {
+  margin-bottom: 0.2em;
+}
+
+.place {
+  margin-bottom: 1em;
+}
+
+.container {
+  padding: 40px 140px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 60px 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .place-name {
+    text-align: left;
+    border-right: none;
   }
-  to {
-    transform: rotate(360deg);
+  .school {
+    border-left: 1px dashed #7790a6;
   }
 }
