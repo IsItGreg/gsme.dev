@@ -41,6 +41,10 @@ section#work {
   .jumbotron .slide-title-subtitle {
     font-size: 2em;
   }
+
+  .aboutme-left > div, .aboutme-left > div > a {
+    flex-direction: row-reverse;
+  }
 }
 @media screen and (max-width: 350px) {
   .jumbotron h1 {
@@ -107,7 +111,7 @@ header h2 {
   color: #7790a6;
 }
 
-.place-name {
+.place-name, .aboutme-left {
   text-align: right;
   border-right: 1px dashed #7790a6;
 }
@@ -129,11 +133,39 @@ header h2 {
     padding: 60px 20px;
   }
 
-  .place-name {
+  .place-name, .aboutme-left {
     text-align: left;
     border-right: none;
   }
   .school {
     border-left: 1px dashed #7790a6;
   }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+
+.aboutme-blurb {
+  text-align: center;
+}
+
+.contact-info-header {
+  text-align: center;
+  color: #010d26;
+}
+
+.aboutme-list > div, .aboutme-list > div > a {
+  display: flex;
+}
+.aboutme-list svg {
+  margin: 6px 4px 0 4px;
+}
+
+.aboutme-list > div, .aboutme-list > div > a {
+  color: #485f73;
+}
+
+.aboutme-list > div > a:hover {
+  color: #7790a6;
 }

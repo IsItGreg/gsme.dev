@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Jumbotron, Row, Col, Container } from 'react-bootstrap';
-import { FaChevronCircleDown } from 'react-icons/fa';
+import { FaChevronCircleDown, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle } from 'react-icons/fa';
+import Pdf from '../src/GregorySmelkovResume.pdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <div style={{ height: "2000px" }}>
         <Jumbotron style={{ height: window.innerHeight }}>
-          <div style={{ right: this.state.slideRight }} class="slide-title">
+          <div style={{ right: this.state.slideRight }} className="slide-title">
             <h1 className="slide-title-title">
               <span className="title-red">G</span>regory <span className="title-red">Sme</span>lkov
             </h1>
@@ -36,8 +36,46 @@ class App extends React.Component {
               <span className="title-red">Dev</span>eloper / Student
             </h4>
           </div>
-          <div class="arrow"><a href="#education"><FaChevronCircleDown /></a></div>
+          <div className="arrow"><a href="#education"><FaChevronCircleDown /></a></div>
         </Jumbotron>
+
+        <section id="about">
+          <Container>
+            <Row>
+              <Col>
+                <article>
+                  <header>
+                    <h2>About Me</h2>
+                  </header>
+                  <Row className="aboutme-blurb">
+                    <Col>
+                      <p>
+                        I'm a Computer Science student at UMass Lowell set to graduate in December 2020.
+                      </p>
+                    </Col>
+                  </Row>
+                  <Row className="contact-info-header">
+                    <Col>
+                      <h3>Contact & Info</h3>
+                    </Col>
+                  </Row>
+                  <Row className="contact-info">
+                    <Col xs={12} sm={6} className="aboutme-list aboutme-left">
+                      <div><FaUserCircle /><span> Gregory Smelkov </span></div>
+                      <div><FaHome /><span> Lexington, MA </span></div>
+                      <div><a target="_blank" rel="noopener noreferrer" href={Pdf}><FaFilePdf /><span> View Resume </span></a></div>
+                    </Col>
+                    <Col xs={12} sm={6} className="aboutme-list aboutme-right">
+                      <div><a href="mailto: gsmelkov@gmail.com"><FaEnvelope /> gsmelkov@gmail.com </a></div>
+                      <div><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greg-smelkov/"><FaLinkedin /> linkedin.com/in/greg-smelkov/ </a></div>
+                      <div><a target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg"><FaGithub /> github.com/IsItGreg </a></div>
+                    </Col>
+                  </Row>
+                </article>
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
         <section id="education">
           <Container>
