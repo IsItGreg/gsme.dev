@@ -36,7 +36,7 @@ class App extends React.Component {
               <span className="title-red">Dev</span>eloper / Student
             </h4>
           </div>
-          <div className="arrow"><a href="#education"><FaChevronCircleDown /></a></div>
+          <div className="arrow"><a href="#about"><FaChevronCircleDown /></a></div>
         </Jumbotron>
 
         <section id="about">
@@ -69,6 +69,28 @@ class App extends React.Component {
                       <div><a href="mailto: gsmelkov@gmail.com"><FaEnvelope /> gsmelkov@gmail.com </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greg-smelkov/"><FaLinkedin /> linkedin.com/in/greg-smelkov/ </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg"><FaGithub /> github.com/IsItGreg </a></div>
+                    </Col>
+                  </Row>
+                </article>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section id="skills">
+          <Container>
+            <Row>
+              <Col>
+                <article>
+                  <header>
+                    <h2>Skills</h2>
+                  </header>
+                  <Row className="justify-content-md-center">
+                    <Col md="auto" className="skills-list">
+                      <div><span>Working knowledge of:</span> JavaScript/HTML/CSS, C#, Python, C/C++</div>
+                      <div><span>Experience with:</span> React, AngularJS, SQL, MongoDB</div>
+                      <div><span>Exposure to:</span> Java, Docker</div>
+                      <div><span>Other tools:</span> Git, VisualStudio, Pycharm</div>
                     </Col>
                   </Row>
                 </article>

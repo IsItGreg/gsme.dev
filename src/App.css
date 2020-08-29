@@ -12,7 +12,7 @@ body {
   background-color: #f2f1f0;
 }
 
-section#work {
+section#work, section#skills {
   background-color: #EBE9E8;
 }
 
@@ -168,4 +168,18 @@ header h2 {
 
 .aboutme-list > div > a:hover {
   color: #7790a6;
+}
+
+/* .skills-list {
+  float: left;
+  position: relative;
+  left: -50%;
+} */
+
+/* .skills-row {
+  text-align: center;
+} */
+
+.skills-list span {
+  color: #485f73;
 }
