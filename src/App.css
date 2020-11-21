@@ -116,6 +116,10 @@ header h2 {
   border-right: 1px dashed #7790a6;
 }
 
+.place-link {
+  color: #7790a6;
+}
+
 .place p {
   margin-bottom: 0.2em;
 }
@@ -182,4 +186,18 @@ header h2 {
 
 .skills-list span {
   color: #485f73;
+}
+
+#page-navbar {
+  position: sticky;
+  background-color: red;
+  width: fit-content;
+  top: 50px;
+  right: 50px;
+  float: right;
+  z-index: 100;
+}
+
+#page-navbar > .navbar-nav {
+  flex-direction: column;
 }
