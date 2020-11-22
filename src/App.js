@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Row, Col, Container, Navbar, Nav } from 'react-bootstrap';
 import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle } from 'react-icons/fa';
+import Scrollspy from 'react-scrollspy';
 import Pdf from '../src/GregorySmelkovResume.pdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -26,7 +27,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div data-spy="scroll" data-target="#page-navbar" data-offset="0">
+      <div>
         <Jumbotron style={{ height: window.innerHeight }}>
           <div style={{ right: this.state.slideRight }} className="slide-title">
             <h1 className="slide-title-title">
@@ -39,7 +40,17 @@ class App extends React.Component {
           <div className="arrow"><a href="#about"><FaChevronCircleDown /></a></div>
         </Jumbotron>
 
-        <Navbar id="page-navbar">
+        <div id="page-navbar">
+          <Scrollspy className="page-navbar-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={ -1 }>
+            <Nav><a href="#about">About</a></Nav>
+            <Nav><a href="#skills">Skills</a></Nav>
+            <Nav><a href="#education">Education</a></Nav>
+            <Nav><a href="#work">Work</a></Nav>
+            <Nav><a href="#projects">Projects</a></Nav>
+          </Scrollspy>
+        </div>
+
+        {/* <Navbar id="page-navbar">
           <Nav>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>
@@ -47,7 +58,7 @@ class App extends React.Component {
             <Nav.Link href="#work">Work</Nav.Link>
             <Nav.Link href="#projects">Projects</Nav.Link>
           </Nav>
-        </Navbar>
+        </Navbar> */}
 
         <section id="about">
           <Container>
