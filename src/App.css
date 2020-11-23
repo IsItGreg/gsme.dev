@@ -199,17 +199,10 @@ header h2 {
   text-align: center;
 }
 
-#page-navbar .nav {
-  
-  /* justify-content: center; */
-}
-
-#page-navbar a {
+.page-navbar-scrollspy a {
   color: #f2f1f0;
-  /* padding: 20px 20px; */
-  padding: 20px 0;
-  width: 110px;
-  border-top: 1px solid #f2f1f0;
+  padding: 10px 20px;
+  height: 50px;
 }
 
 .navbar-active {
@@ -219,4 +212,33 @@ header h2 {
 .page-navbar-scrollspy {
   padding: 0;
   margin: 0;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  width: fit-content;
+}
+
+.topbar {
+  height: 50px;
+  width: 100%;
+  margin-top: -50px;
+  background-color: #010d26;
+  top: 0;
+  position: sticky;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-name {
+  color: #f2f1f0;
+  width: fit-content;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.scrollspy-wrapper {
+  display: inline-block;
 }

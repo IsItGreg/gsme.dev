@@ -12,7 +12,9 @@ class App extends React.Component {
     this.onPageScroll = this.onPageScroll.bind(this);
     this.state = {
       winHeight: window.innerHeight,
-      slideRight: 10
+      slideRight: 10,
+      arrowOpacity: 1,
+      navbarOpacity: 0,
     }
   }
 
@@ -22,7 +24,11 @@ class App extends React.Component {
   }
 
   onPageScroll = () => {
-    this.setState({ slideRight: window.scrollY / (window.innerHeight * .5) * window.innerWidth + 10 })
+    this.setState({
+      slideRight: window.scrollY / (window.innerHeight * .5) * window.innerWidth + 10,
+      arrowOpacity: 1 - (window.scrollY - window.innerHeight / 4) / (window.innerHeight / 4),
+      navbarOpacity: (window.scrollY - 3 * window.innerHeight / 4) / (window.innerHeight / 8)
+    })
   }
 
   render() {
@@ -37,17 +43,26 @@ class App extends React.Component {
               <span className="title-red">Dev</span>eloper / Student
             </h4>
           </div>
-          <div className="arrow"><a href="#about"><FaChevronCircleDown /></a></div>
+          <div style={{ opacity: this.state.arrowOpacity }} className="arrow"><a href="#about"><FaChevronCircleDown /></a></div>
         </Jumbotron>
 
+        <div className="topbar">
+          <h3 style={{ opacity: this.state.navbarOpacity }} className="navbar-name">
+            <span className="title-red">G</span>regory <span className="title-red">Sme</span>lkov
+          </h3>
+          <div className="scrollspy-wrapper">
+            <Scrollspy style={{ opacity: this.state.navbarOpacity }} className="page-navbar-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={-1}>
+              <Nav><a href="#about">About</a></Nav>
+              <Nav><a href="#skills">Skills</a></Nav>
+              <Nav><a href="#education">Education</a></Nav>
+              <Nav><a href="#work">Work</a></Nav>
+              <Nav><a href="#projects">Projects</a></Nav>
+            </Scrollspy>
+          </div>
+        </div>
+
         <div id="page-navbar">
-          <Scrollspy className="page-navbar-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={ -1 }>
-            <Nav><a href="#about">About</a></Nav>
-            <Nav><a href="#skills">Skills</a></Nav>
-            <Nav><a href="#education">Education</a></Nav>
-            <Nav><a href="#work">Work</a></Nav>
-            <Nav><a href="#projects">Projects</a></Nav>
-          </Scrollspy>
+
         </div>
 
         {/* <Navbar id="page-navbar">
