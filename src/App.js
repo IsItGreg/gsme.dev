@@ -1,6 +1,6 @@
 import React from 'react';
-import { Jumbotron, Row, Col, Container, Navbar, Nav } from 'react-bootstrap';
-import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle } from 'react-icons/fa';
+import { Jumbotron, Row, Col, Container, Nav, Button } from 'react-bootstrap';
+import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
 import Scrollspy from 'react-scrollspy';
 import Pdf from '../src/GregorySmelkovResume.pdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,12 +9,14 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.topbarDropdown = React.createRef();
     this.onPageScroll = this.onPageScroll.bind(this);
     this.state = {
       winHeight: window.innerHeight,
       slideRight: 10,
       arrowOpacity: 1,
       navbarOpacity: 0,
+      showTopbarDropdown: false,
     }
   }
 
@@ -25,10 +27,29 @@ class App extends React.Component {
 
   onPageScroll = () => {
     this.setState({
-      slideRight: window.scrollY / (window.innerHeight * .5) * window.innerWidth + 10,
-      arrowOpacity: 1 - (window.scrollY - window.innerHeight / 4) / (window.innerHeight / 4),
-      navbarOpacity: (window.scrollY - 3 * window.innerHeight / 4) / (window.innerHeight / 8)
+      slideRight: window.scrollY / (window.innerHeight * .5) * window.innerWidth + 10
     })
+    if (window.scrollY <= window.innerHeight - 50) {
+      this.topbarDropdown.current.style.height = "0";
+      this.setState({ showTopbarDropdown: false });
+    }
+    this.setState({
+      arrowOpacity: 1 - (window.scrollY - window.innerHeight / 4) / (window.innerHeight / 4),
+      navbarOpacity: (window.scrollY - 4 * window.innerHeight / 5) / (window.innerHeight / 8)
+    })
+
+  }
+
+  toggleTopbarDropdown = () => {
+    if (window.scrollY > window.innerHeight - 50) {
+      if (this.state.showTopbarDropdown) {
+        this.topbarDropdown.current.style.height = "0";
+      }
+      else {
+        this.topbarDropdown.current.style.height = "120px";
+      }
+      this.setState({ showTopbarDropdown: !this.state.showTopbarDropdown });
+    }
   }
 
   render() {
@@ -45,24 +66,30 @@ class App extends React.Component {
           </div>
           <div style={{ opacity: this.state.arrowOpacity }} className="arrow"><a href="#about"><FaChevronCircleDown /></a></div>
         </Jumbotron>
-
+        <div style={{ height: window.innerHeight }} className="hide-dropdown" />
         <div className="topbar">
           <h3 style={{ opacity: this.state.navbarOpacity }} className="navbar-name">
             <span className="title-red">G</span>regory <span className="title-red">Sme</span>lkov
           </h3>
-          <div className="scrollspy-wrapper">
-            <Scrollspy style={{ opacity: this.state.navbarOpacity }} className="page-navbar-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={-1}>
+          <div style={{ opacity: this.state.navbarOpacity }} className="scrollspy-wrapper">
+            <Scrollspy className="page-navbar-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={-1}>
               <Nav><a href="#about">About</a></Nav>
               <Nav><a href="#skills">Skills</a></Nav>
               <Nav><a href="#education">Education</a></Nav>
               <Nav><a href="#work">Work</a></Nav>
               <Nav><a href="#projects">Projects</a></Nav>
             </Scrollspy>
+            <Button variant="outline" className="hamburger-menu-button" onClick={this.toggleTopbarDropdown}><FaHamburger /></Button>
           </div>
         </div>
-
-        <div id="page-navbar">
-
+        <div className="topbar-dropdown" ref={this.topbarDropdown}>
+          <Scrollspy className="topbar-dropdown-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={-1}>
+            <Nav onClick={this.toggleTopbarDropdown}><a href="#about">About</a></Nav>
+            <Nav onClick={this.toggleTopbarDropdown}><a href="#skills">Skills</a></Nav>
+            <Nav onClick={this.toggleTopbarDropdown}><a href="#education">Education</a></Nav>
+            <Nav onClick={this.toggleTopbarDropdown}><a href="#work">Work</a></Nav>
+            <Nav onClick={this.toggleTopbarDropdown}><a href="#projects">Projects</a></Nav>
+          </Scrollspy>
         </div>
 
         {/* <Navbar id="page-navbar">
