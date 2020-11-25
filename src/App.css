@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  /* width: 100%;
+  overflow-x: hidden; */
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -18,7 +20,7 @@ section#skills {
 }
 
 section {
-  /* padding: 70px 0; */
+  padding: 20px 0;
 }
 
 .jumbotron > .slide-title {
@@ -38,6 +40,7 @@ section {
   margin-top: 0;
   margin-bottom: 5px;
   text-align: right;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 768px) {
@@ -84,6 +87,15 @@ section {
   position: absolute;
   font-size: 5em;
   width: 100%;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
+}
+
+@keyframes bounce {
+  from {transform: translateY(-20px);}
+  to {transform: translateY(0px);}
 }
 
 .arrow svg {
@@ -94,6 +106,16 @@ section {
   color: #485f73;
   cursor: pointer;
 }
+
+/* .big-arrow {
+  font-size: 1000px;
+  top: -500px;
+  right: -500px;
+  color: #733C0F;
+  z-index: 14;
+  transform: rotate(15deg);
+  position: absolute;
+} */
 
 .slide_title {
   margin-right: 5%;
@@ -232,11 +254,11 @@ header h2 {
 }
 
 .topbar {
-  height: 50px;
+  height: 51px;
   width: 100%;
   margin-top: -50px;
   background-color: #010d26;
-  top: 0;
+  top: -1px;
   position: sticky;
   z-index: 13;
   display: flex;
@@ -276,6 +298,7 @@ header h2 {
   color: #f2f1f0;
   text-align: center;
   width: 100%;
+  padding: 5px 0;
 }
 
 .hamburger-menu-button {

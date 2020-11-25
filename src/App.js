@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron, Row, Col, Container, Nav, Button } from 'react-bootstrap';
-import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
+import { FaChevronCircleDown, FaPlay, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
 import Scrollspy from 'react-scrollspy';
 import Pdf from '../src/GregorySmelkovResume.pdf';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,7 +46,7 @@ class App extends React.Component {
         this.topbarDropdown.current.style.height = "0";
       }
       else {
-        this.topbarDropdown.current.style.height = "120px";
+        this.topbarDropdown.current.style.height = "171px";
       }
       this.setState({ showTopbarDropdown: !this.state.showTopbarDropdown });
     }
@@ -55,6 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/* <FaPlay className="big-arrow" /> */}
         <Jumbotron style={{ height: window.innerHeight }}>
           <div style={{ right: this.state.slideRight }} className="slide-title">
             <h1 className="slide-title-title">
@@ -83,7 +84,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="topbar-dropdown" ref={this.topbarDropdown}>
-          <Scrollspy className="topbar-dropdown-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={-1}>
+          <Scrollspy className="topbar-dropdown-scrollspy" items={['about', 'skills', 'education', 'work', 'projects']} currentClassName="navbar-active" offset={50}>
             <Nav onClick={this.toggleTopbarDropdown}><a href="#about">About</a></Nav>
             <Nav onClick={this.toggleTopbarDropdown}><a href="#skills">Skills</a></Nav>
             <Nav onClick={this.toggleTopbarDropdown}><a href="#education">Education</a></Nav>
