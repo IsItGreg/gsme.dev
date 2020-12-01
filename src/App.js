@@ -93,16 +93,6 @@ class App extends React.Component {
           </Scrollspy>
         </div>
 
-        {/* <Navbar id="page-navbar">
-          <Nav>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#skills">Skills</Nav.Link>
-            <Nav.Link href="#education">Education</Nav.Link>
-            <Nav.Link href="#work">Work</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-          </Nav>
-        </Navbar> */}
-
         <section id="about">
           <Container>
             <Row>
@@ -130,7 +120,7 @@ class App extends React.Component {
                       <div><a target="_blank" rel="noopener noreferrer" href={Pdf}><FaFilePdf /><span> View Resume </span></a></div>
                     </Col>
                     <Col xs={12} sm={6} className="aboutme-list aboutme-right">
-                      <div><a href="mailto: gsmelkov@gmail.com"><FaEnvelope /> gsmelkov@gmail.com </a></div>
+                      <div><a href="mailto: greg@gsme.dev"><FaEnvelope /> greg@gsme.dev </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greg-smelkov/"><FaLinkedin /> linkedin.com/in/greg-smelkov/ </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg"><FaGithub /> github.com/IsItGreg </a></div>
                     </Col>
@@ -151,10 +141,10 @@ class App extends React.Component {
                   </header>
                   <Row className="justify-content-md-center">
                     <Col md="auto" className="skills-list">
-                      <div><span>Working knowledge of:</span> JavaScript/HTML/CSS, C#, Python, C/C++</div>
-                      <div><span>Experience with:</span> React, AngularJS, SQL, MongoDB</div>
+                      <div><span>Working knowledge of:</span> JavaScript, HTML/CSS, C#, Python, C/C++</div>
+                      <div><span>Experience with:</span> React, Redux, AngularJS, SQL, MongoDB</div>
                       <div><span>Exposure to:</span> Java, Docker</div>
-                      <div><span>Other tools:</span> Git, VisualStudio, Pycharm</div>
+                      <div><span>Other tools:</span> Git, Bootstrap, NodeJS, REST APIs</div>
                     </Col>
                   </Row>
                 </article>
@@ -173,14 +163,26 @@ class App extends React.Component {
                   </header>
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
+                      <h3>UMass Amherst</h3>
+                      <p>Jan 2021 - May 2022</p>
+                    </Col>
+                    <Col xs={12} sm={6} className="place-about">
+                      <h4>Masters of Computer Science</h4>
+                      <p>Pursuing graduate degree, expected May 2022</p>
+                      <p>Notable courses: Machine Learning, Optimization, Wireless Networking & Sensing, Intelligent Visual Computing</p>
+                    </Col>
+                  </Row>
+                  <Row className="place">
+                    <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Lowell</h3>
                       <p>Aug 2017 - Dec 2020</p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
-                      <h4>Bachelors in Computer Science</h4>
+                      <h4>Bachelors of Computer Science</h4>
                       <p>Minor in Business Administration</p>
                       <p>Minor in Math</p>
                       <p>3.87 GPA, Dean's list</p>
+                      <p>Notable courses: Software Engineering, Analysis of Algorithms, Operating Systems, Foundations of CS, Organization of Programming Languages</p>
                     </Col>
                   </Row>
                   <Row className="row place">
@@ -315,6 +317,8 @@ class App extends React.Component {
             </Row>
           </Container>
         </section>
+
+        
       </div>
     );
   }
