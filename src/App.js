@@ -12,7 +12,6 @@ class App extends React.Component {
     this.topbarDropdown = React.createRef();
     this.onPageScroll = this.onPageScroll.bind(this);
     this.state = {
-      winHeight: window.innerHeight,
       slideRight: 10,
       arrowOpacity: 1,
       navbarOpacity: 0,
@@ -20,19 +19,24 @@ class App extends React.Component {
     }
   }
 
+  // On mount, add in event listeners to allow for several of the elements of
+  // the page to move based on the scroll position or adapt to page resizes
   componentDidMount() {
     window.addEventListener('scroll', this.onPageScroll);
     window.addEventListener('resize', this.onPageScroll);
   }
 
   onPageScroll = () => {
+    // Move slider to the left when scrolling
     this.setState({
       slideRight: window.scrollY / (window.innerHeight * .5) * window.innerWidth + 10
     })
+    // Close mobile navbar dropdown if page is scrolled up
     if (window.scrollY <= window.innerHeight - 50) {
       this.topbarDropdown.current.style.height = "0";
       this.setState({ showTopbarDropdown: false });
     }
+    // Fade out arrow and fade in navbar when page is scrolled down
     this.setState({
       arrowOpacity: 1 - (window.scrollY - window.innerHeight / 4) / (window.innerHeight / 4),
       navbarOpacity: (window.scrollY - 4 * window.innerHeight / 5) / (window.innerHeight / 8)
@@ -40,6 +44,7 @@ class App extends React.Component {
 
   }
 
+  // Used the ref height to animate mobile navbar dropdown opening
   toggleTopbarDropdown = () => {
     if (window.scrollY > window.innerHeight - 50) {
       if (this.state.showTopbarDropdown) {
@@ -102,9 +107,9 @@ class App extends React.Component {
                     <h2>About Me</h2>
                   </header>
                   <Row className="aboutme-blurb">
-                    <Col>
+                    <Col >
                       <p>
-                        I'm a passionate Computer Science student at UMass Lowell set to graduate in December 2020.
+                        I have just completed my bachelors of Computer Science at UMass Lowell in December 2020 and I am currently looking for a full time position as a software engineer. You can reach me through my email or send a message through LinkedIn.
                       </p>
                     </Col>
                   </Row>
@@ -120,7 +125,7 @@ class App extends React.Component {
                       <div><a target="_blank" rel="noopener noreferrer" href={Pdf}><FaFilePdf /><span> View Resume </span></a></div>
                     </Col>
                     <Col xs={12} sm={6} className="aboutme-list aboutme-right">
-                      <div><a href="mailto: greg@gsme.dev"><FaEnvelope /> greg@gsme.dev </a></div>
+                      <div><a href="mailto: gsme+gsmelkov@gmail.com"><FaEnvelope /> gsmelkov@gmail.com </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greg-smelkov/"><FaLinkedin /> linkedin.com/in/greg-smelkov/ </a></div>
                       <div><a target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg"><FaGithub /> github.com/IsItGreg </a></div>
                     </Col>
@@ -144,7 +149,7 @@ class App extends React.Component {
                       <div><span>Working knowledge of:</span> JavaScript, HTML/CSS, C#, Python, C/C++</div>
                       <div><span>Experience with:</span> React, Redux, AngularJS, SQL, MongoDB</div>
                       <div><span>Exposure to:</span> Java, Docker</div>
-                      <div><span>Other tools:</span> Git, Bootstrap, NodeJS, REST APIs</div>
+                      <div><span>Other tools:</span> Git version control, Bootstrap, NodeJS, REST APIs, SSMS</div>
                     </Col>
                   </Row>
                 </article>
@@ -161,7 +166,7 @@ class App extends React.Component {
                   <header>
                     <h2>Education</h2>
                   </header>
-                  <Row className="place">
+                  {/* <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Amherst</h3>
                       <p>Jan 2021 - May 2022</p>
@@ -171,7 +176,7 @@ class App extends React.Component {
                       <p>Pursuing graduate degree, expected May 2022</p>
                       <p>Notable courses: Machine Learning, Optimization, Wireless Networking & Sensing, Intelligent Visual Computing</p>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Lowell</h3>
@@ -216,8 +221,9 @@ class App extends React.Component {
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Software Developer Intern</h4>
-                      <p>Working as a member of the development team on contract management solution (C#, JS)</p>
-                      <p>Adding features and bug-fixes to the AngularJS/.NET web app using C#, JavaScript, and SQL in both the front end and the back end</p>
+                      <p>Worked with development team to design and develop contract collaboration portal</p>
+                      <p>Improved the users’ experience  by implementing new features and resolving bugs in an AngularJS/.NET web app (C#, JavaScript)</p>
+                      <p>Created database migrations and used SSMS to write and run SQL queries (SQL)</p>
                     </Col>
                   </Row>
                   <Row className="place">
@@ -228,8 +234,8 @@ class App extends React.Component {
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Software Engineering Intern</h4>
                       <p>Worked alongside full-time developers as a member of an Agile/Scrum team on a DoD sponsored mission planning system</p>
-                      <p>Implemented various features and bug fixes in the C#/.NET front-end application</p>
-                      <p>Used Docker to adapt a micro-service into a container to have it work with the rest of the service infrastructure</p>
+                      <p>Implemented many new features as well as found and fixed bugs in the .NET application (C#)</p>
+                      <p>Adapted a microservice into a Docker container to run with the rest of the service infrastructure</p>
                     </Col>
                   </Row>
                   <Row className="place">
@@ -240,8 +246,8 @@ class App extends React.Component {
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Research Intern</h4>
-                      <p>Designed and developed an interface to annotate articles and other texts with regard to time for a temporal dataset (JavaScript, HTML)</p>
-                      <p>Co-author on NarrativeTime research paper about temporal annotation tool.</p>
+                      <p>Designed and developed an interface to annotate articles and other texts with regard to time to quickly and easily create annotated datasets (JavaScript, HTML)</p>
+                      <p>Co-author on NarrativeTime research paper about temporal annotation tool</p>
                       <p>Worked to create an annotated call-to-action dataset to predict political unrest (Python)</p>
                       <p>Created a program to extract user conversations from Reddit for teaching chat bots (Python)</p>
                       <p>Wrote a script to scrape and format text from news articles for a temporal dataset (Python)</p>
