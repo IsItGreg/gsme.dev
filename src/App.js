@@ -1,8 +1,9 @@
 import React from 'react';
 import { Jumbotron, Row, Col, Container, Nav, Button } from 'react-bootstrap';
-import { FaChevronCircleDown, FaPlay, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
+import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
 import Scrollspy from 'react-scrollspy';
-import Pdf from '../src/GregorySmelkovResume.pdf';
+import Resume from '../src/GregorySmelkovResume.pdf';
+import ContractLogixRecommendation from '../src/GregorySmelkovContractLogixRecommendation.pdf'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -109,7 +110,8 @@ class App extends React.Component {
                   <Row className="aboutme-blurb">
                     <Col >
                       <p>
-                        I have just completed my bachelors of Computer Science at UMass Lowell in December 2020 and I am currently looking for a full time position as a software engineer. You can reach me through my email or send a message through LinkedIn.
+                        I have just started my first graduate semester at UMass Amherst and am currently looking for a summer internship. 
+                        You can reach me through my email or send a message through LinkedIn.
                       </p>
                     </Col>
                   </Row>
@@ -122,7 +124,7 @@ class App extends React.Component {
                     <Col xs={12} sm={6} className="aboutme-list aboutme-left">
                       <div><FaUserCircle /><span> Gregory Smelkov </span></div>
                       <div><FaHome /><span> Lexington, MA </span></div>
-                      <div><a target="_blank" rel="noopener noreferrer" href={Pdf}><FaFilePdf /><span> View Resume </span></a></div>
+                      <div><a target="_blank" rel="noopener noreferrer" href={Resume}><FaFilePdf /><span> View Resume </span></a></div>
                     </Col>
                     <Col xs={12} sm={6} className="aboutme-list aboutme-right">
                       <div><a href="mailto: gsme+gsmelkov@gmail.com"><FaEnvelope /> gsmelkov@gmail.com </a></div>
@@ -146,7 +148,7 @@ class App extends React.Component {
                   </header>
                   <Row className="justify-content-md-center">
                     <Col md="auto" className="skills-list">
-                      <div><span>Working knowledge of:</span> JavaScript, HTML/CSS, C#, Python, C/C++</div>
+                      <div><span>Working knowledge of:</span> JavaScript, HTML/CSS, Python, C#, C/C++</div>
                       <div><span>Experience with:</span> React, Redux, AngularJS, SQL, MongoDB</div>
                       <div><span>Exposure to:</span> Java, Docker</div>
                       <div><span>Other tools:</span> Git version control, Bootstrap, NodeJS, REST APIs, SSMS</div>
@@ -166,7 +168,7 @@ class App extends React.Component {
                   <header>
                     <h2>Education</h2>
                   </header>
-                  {/* <Row className="place">
+                  <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Amherst</h3>
                       <p>Jan 2021 - May 2022</p>
@@ -176,7 +178,7 @@ class App extends React.Component {
                       <p>Pursuing graduate degree, expected May 2022</p>
                       <p>Notable courses: Machine Learning, Optimization, Wireless Networking & Sensing, Intelligent Visual Computing</p>
                     </Col>
-                  </Row> */}
+                  </Row>
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Lowell</h3>
@@ -186,11 +188,12 @@ class App extends React.Component {
                       <h4>Bachelors of Computer Science</h4>
                       <p>Minor in Business Administration</p>
                       <p>Minor in Math</p>
-                      <p>3.87 GPA, Dean's list</p>
-                      <p>Notable courses: Software Engineering, Analysis of Algorithms, Operating Systems, Foundations of CS, Organization of Programming Languages</p>
+                      <p>3.9 GPA, Dean's List, Summa Cum Laude</p>
+                      <p>Notable courses: 
+                      Software Engineering, Analysis of Algorithms, Operating Systems, Foundations of CS, Organization of Programming Languages</p>
                     </Col>
                   </Row>
-                  <Row className="row place">
+                  {/* <Row className="row place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>Lexington High School</h3>
                       <p>Sep 2013 - May 2017</p>
@@ -199,7 +202,7 @@ class App extends React.Component {
                       <h4>Class of 2017</h4>
                       <p>Member of the nationally placing First Tech Challenge robotics team</p>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </article>
               </Col>
             </Row>
@@ -217,12 +220,14 @@ class App extends React.Component {
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>Contract Logix</h3>
-                      <p>Sep 2019 - Present</p>
+                      <p>Sep 2019 - Dec 2020</p>
+                      <p><a className="place-link" target="_blank" rel="noopener noreferrer" href={ContractLogixRecommendation}>Recommendation <FaFileAlt /></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Software Developer Intern</h4>
-                      <p>Worked with development team to design and develop contract collaboration portal</p>
-                      <p>Improved the users’ experience  by implementing new features and resolving bugs in an AngularJS/.NET web app (C#, JavaScript)</p>
+                      <p>Worked as a part of the development team on the existing contract management .NET web-app</p>
+                      <p>Improved user experience by implementing new features and resolving bugs (C#, JavaScript)</p>
+                      <p>Contributed to design and development of collaboration portal to streamline client contracts</p>
                       <p>Created database migrations and used SSMS to write and run SQL queries (SQL)</p>
                     </Col>
                   </Row>
@@ -234,7 +239,7 @@ class App extends React.Component {
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Software Engineering Intern</h4>
                       <p>Worked alongside full-time developers as a member of an Agile/Scrum team on a DoD sponsored mission planning system</p>
-                      <p>Implemented many new features as well as found and fixed bugs in the .NET application (C#)</p>
+                      <p>Implemented many new features, identified and fixed bugs in existing .NET application (C#)</p>
                       <p>Adapted a microservice into a Docker container to run with the rest of the service infrastructure</p>
                     </Col>
                   </Row>
@@ -246,9 +251,10 @@ class App extends React.Component {
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Research Intern</h4>
-                      <p>Designed and developed an interface to annotate articles and other texts with regard to time to quickly and easily create annotated datasets (JavaScript, HTML)</p>
+                      <p>Designed and developed an interface for a research paper to annotate articles and other texts with regard to time.
+                      The new tool, NarrativeTime, allows for  to simplify and expedite the process to create annotated datasets (JavaScript, HTML)</p>
                       <p>Co-author on NarrativeTime research paper about temporal annotation tool</p>
-                      <p>Worked to create an annotated call-to-action dataset to predict political unrest (Python)</p>
+                      <p>Implemented a tool to annotate posts for calls-to-action to predict political unrest (Python)</p>
                       <p>Created a program to extract user conversations from Reddit for teaching chat bots (Python)</p>
                       <p>Wrote a script to scrape and format text from news articles for a temporal dataset (Python)</p>
                     </Col>
@@ -300,7 +306,7 @@ class App extends React.Component {
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>gsme.dev</h4>
-                      <p>This website was intended to be a digital version of my resume that allows for more detailed descriptions of what I have done.</p>
+                      <p>This website was intended to be a digital version of my resume and an opportunity to learn React and Bootstrap</p>
                       <p>I built this site using React, Bootstrap, and hosted on GitHub pages and you can find the source code in the repository on the left.</p>
                     </Col>
                   </Row>
