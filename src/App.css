@@ -151,6 +151,10 @@ header h2 {
   color: #7790a6;
 }
 
+.place-link:hover {
+  color: #485f73;
+}
+
 .place p {
   margin-bottom: 0.2em;
 }
@@ -333,4 +337,10 @@ header h2 {
   background-color: #010d26;
   z-index: 12;
   top: 0;
+}
+
+.copyright {
+  text-align: center;
+  color: #7790a6;
+  margin-top: 20px;
 }

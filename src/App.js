@@ -1,8 +1,8 @@
 import React from 'react';
 import { Jumbotron, Row, Col, Container, Nav, Button } from 'react-bootstrap';
-import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
+import { FaChevronCircleDown, FaFileAlt, FaGithub, FaLinkedin, FaMouse, FaHome, FaEnvelope, FaFilePdf, FaUserCircle, FaHamburger } from 'react-icons/fa';
 import Scrollspy from 'react-scrollspy';
-import Resume from '../src/GregorySmelkovResume.pdf';
+import Resume from '../src/Resume 1_2022.pdf';
 import ContractLogixRecommendation from '../src/GregorySmelkovContractLogixRecommendation.pdf'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -110,8 +110,11 @@ class App extends React.Component {
                   <Row className="aboutme-blurb">
                     <Col >
                       <p>
-                        I have just started my first graduate semester at UMass Amherst and am currently looking for a summer internship. 
-                        You can reach me through my email or send a message through LinkedIn.
+                        Currently working as a full-stack software engineer at Rivet Health, a SaaS startup creating tools to make healthcare billing more transparent, while
+                        also studying Computer Science at UMass Amherst.
+                      </p>
+                      <p>
+                        Feel free to contact me at the links below if you want to chat.
                       </p>
                     </Col>
                   </Row>
@@ -148,10 +151,9 @@ class App extends React.Component {
                   </header>
                   <Row className="justify-content-md-center">
                     <Col md="auto" className="skills-list">
-                      <div><span>Working knowledge of:</span> JavaScript, HTML/CSS, Python, C#, C/C++</div>
-                      <div><span>Experience with:</span> React, Redux, AngularJS, SQL, MongoDB</div>
-                      <div><span>Exposure to:</span> Java, Docker</div>
-                      <div><span>Other tools:</span> Git version control, Bootstrap, NodeJS, REST APIs, SSMS</div>
+                      <div><span>Languages:</span>  TypeScript/JavaScript, Python, PostgreSQL, SQL, HTML, CSS, C/C++, C#</div>
+                      <div><span>Experience with:</span> Angular, React, Redux, MongoDB, NodeJS, Sass</div>
+                      <div><span>Other tools:</span> Git version control, Bootstrap, REST APIs, Docker, SSMS</div>
                     </Col>
                   </Row>
                 </article>
@@ -171,12 +173,13 @@ class App extends React.Component {
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>UMass Amherst</h3>
-                      <p>Jan 2021 - May 2022</p>
+                      <p>Jan 2021 - Present</p>
+                      <p>(Expected Dec 2022)</p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
-                      <h4>Masters of Computer Science</h4>
-                      <p>Pursuing graduate degree, expected May 2022</p>
-                      <p>Notable courses: Machine Learning, Optimization, Wireless Networking & Sensing, Intelligent Visual Computing</p>
+                      <h4>Masters in Computer Science</h4>
+                      <p>Pursuing graduate degree in Computer Science, GPA: 3.7</p>
+                      <p>Notable courses: Machine Learning, Neural Networks, Optimization, Wireless Networking & Sensing, Intelligent Visual Computing</p>
                     </Col>
                   </Row>
                   <Row className="place">
@@ -185,10 +188,10 @@ class App extends React.Component {
                       <p>Aug 2017 - Dec 2020</p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
-                      <h4>Bachelors of Computer Science</h4>
+                      <h4>Bachelors in Computer Science</h4>
                       <p>Minor in Business Administration</p>
                       <p>Minor in Math</p>
-                      <p>3.9 GPA, Dean's List, Summa Cum Laude</p>
+                      <p>3.9 GPA, Dean's List, Graduated Summa Cum Laude</p>
                       <p>Notable courses: 
                       Software Engineering, Analysis of Algorithms, Operating Systems, Foundations of CS, Organization of Programming Languages</p>
                     </Col>
@@ -219,8 +222,21 @@ class App extends React.Component {
                   </header>
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
+                      <h3>Rivet Health</h3>
+                      <p>Jun 2021 - Present</p>
+                      <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://www.rivethealth.com/">Website <FaMouse/></a></p>
+                    </Col>
+                    <Col xs={12} sm={6} className="place-about">
+                      <h4>Software Developer Intern</h4>
+                      <p>Contributed to a SaaS web-app to make healthcare billing more transparent and seamless (TypeScript, Node.js, Angular, PostgreSQL)</p>
+                      <p>Developing features to improve user experience with a focus on code quality</p>
+                    </Col>
+                  </Row>
+                  <Row className="place">
+                    <Col xs={12} sm={6} className="place-name">
                       <h3>Contract Logix</h3>
                       <p>Sep 2019 - Dec 2020</p>
+                      <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://www.contractlogix.com/">Website <FaMouse/></a></p>
                       <p><a className="place-link" target="_blank" rel="noopener noreferrer" href={ContractLogixRecommendation}>Recommendation <FaFileAlt /></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
@@ -235,6 +251,7 @@ class App extends React.Component {
                     <Col xs={12} sm={6} className="place-name">
                       <h3>MITRE Corporation</h3>
                       <p>May 2019 - Aug 2019</p>
+                      <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://www.mitre.org/">Website <FaMouse/></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Software Engineering Intern</h4>
@@ -247,6 +264,7 @@ class App extends React.Component {
                     <Col xs={12} sm={6} className="place-name">
                       <h3>Text Machine Lab</h3>
                       <p>Jun 2018 - May 2019</p>
+                      <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://text-machine.cs.uml.edu/lab2/">Website <FaMouse/></a></p>
                       <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/1908.11443">NarrativeTime paper <FaFileAlt /></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
@@ -288,26 +306,26 @@ class App extends React.Component {
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>Cage Inventory Management System</h3>
-                      <p>June 2020 - Present</p>
+                      <p>Jun 2020 - Dec 2020</p>
                       <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg/CageIMS">View on GitHub <FaGithub /></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>Camera inventory management web-app</h4>
-                      <p>Lead the design and development on a full-stack inventory management solution for the photography department at UMass Lowell.</p>
-                      <p>Built using React, Node.js, and MongoDB, this project was fun to create as it allowed me to learn those tools as well as RESTful APIs, managing user passwords, and all that goes into a larger project.</p>
-                      <p>The front-end UI was implemented in React using Bootstrap, Material-UI, Semantic UI, and Sass.</p>
+                      <p>Lead the design and development on a full-stack inventory management solution for the photography department at UMass Lowell</p>
+                      <p>Built using React, Node.js, and MongoDB, this project was fun to create as it allowed me to learn those tools as well as RESTful APIs, managing user passwords, and all that goes into a larger project</p>
+                      <p>The front-end UI was implemented in React using Bootstrap, Material-UI, Semantic UI, and Sass</p>
                     </Col>
                   </Row>
                   <Row className="place">
                     <Col xs={12} sm={6} className="place-name">
                       <h3>Personal Website</h3>
-                      <p>Aug 2020 - Present</p>
+                      <p>Aug 2020</p>
                       <p><a className="place-link" target="_blank" rel="noopener noreferrer" href="https://github.com/IsItGreg/gsme.dev">View on GitHub <FaGithub /></a></p>
                     </Col>
                     <Col xs={12} sm={6} className="place-about">
                       <h4>gsme.dev</h4>
-                      <p>This website was intended to be a digital version of my resume and an opportunity to learn React and Bootstrap</p>
-                      <p>I built this site using React, Bootstrap, and hosted on GitHub pages and you can find the source code in the repository on the left.</p>
+                      <p>This website was intended to be a digital version of my resume and an opportunity to learn responsive design, React, and Bootstrap</p>
+                      <p>I built this site using React, Bootstrap, and hosted on GitHub pages and you can find the source code on my GitHub</p>
                     </Col>
                   </Row>
                   <Row className="place">
@@ -329,8 +347,7 @@ class App extends React.Component {
             </Row>
           </Container>
         </section>
-
-        
+        <p className="copyright">© 2022 Gregory Smelkov</p>
       </div>
     );
   }
