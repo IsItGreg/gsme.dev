@@ -14,7 +14,7 @@ body {
   background-color: #f2f1f0;
 }
 
-section#work,
+section#education,
 section#skills {
   background-color: #ebe9e8;
 }
@@ -26,10 +26,11 @@ section {
 .jumbotron > .slide-title {
   top: 25%;
   position: fixed;
-  text-align: right;
   width: fit-content;
-  text-align: right;
   z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .jumbotron .slide-title-title {
@@ -49,6 +50,7 @@ section {
   }
   .jumbotron .slide-title-subtitle {
     font-size: 2em;
+    white-space: nowrap;
   }
 
   .aboutme-left > div,
@@ -94,8 +96,12 @@ section {
 }
 
 @keyframes bounce {
-  from {transform: translateY(-20px);}
-  to {transform: translateY(0px);}
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .arrow svg {
