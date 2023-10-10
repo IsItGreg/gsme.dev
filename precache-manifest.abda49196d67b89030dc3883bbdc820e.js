@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb0ad68f23cbce1c6bdb3b1f42c7fe9e",
+    "revision": "4543e2588b0b5d3e59ff4e70408f1c51",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.437d98bc.chunk.css"
   },
   {
-    "revision": "c47f06020aff20e6e695",
+    "revision": "547171ba52033928c369",
     "url": "/static/css/main.1ab196fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.f5d7c909.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c47f06020aff20e6e695",
-    "url": "/static/js/main.ad46d797.chunk.js"
+    "revision": "547171ba52033928c369",
+    "url": "/static/js/main.49e95ed5.chunk.js"
   },
   {
     "revision": "9f9ea5bdd9cf7a888773",
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/GregorySmelkovContractLogixRecommendation.3ee3deed.pdf"
   },
   {
-    "revision": "3756879c51ef1f5a602cd7e7811c3ed8",
-    "url": "/static/media/Resume 10_2023.3756879c.pdf"
+    "revision": "032586b73eeee4da30eb76c5dabe2bea",
+    "url": "/static/media/Resume 10_2023.032586b7.pdf"
   }
 ]);
