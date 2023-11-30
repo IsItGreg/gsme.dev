@@ -49,7 +49,7 @@ export default class Item extends React.Component {
         <Col xs={12} sm={6} className="place-name">
           <h3>{this.props.item.title}</h3>
           <p>{this.props.item.date}</p>
-          {this.props.item.links.map((link, index) => (
+          {this.props.item.links?.map((link, index) => (
             <p key={`place-${index}`}>{this.getLink(link)}</p>
           ))}
         </Col>

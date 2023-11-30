@@ -11,7 +11,7 @@ import {
   FaHamburger,
 } from "react-icons/fa";
 import Scrollspy from "react-scrollspy";
-import Resume from "../src/Resume 10_2023.pdf";
+import Resume from "../src/Resume10_2023.pdf";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import data from "./data.js";
@@ -109,7 +109,7 @@ class App extends React.Component {
           >
             <Scrollspy
               className="page-navbar-scrollspy"
-              items={["about", "skills", "education", "work", "projects"]}
+              items={["about", "skills", "work", "education", "projects"]}
               currentClassName="navbar-active"
               offset={-1}
             >
@@ -120,10 +120,10 @@ class App extends React.Component {
                 <a href="#skills">Skills</a>
               </Nav>
               <Nav>
-                <a href="#education">Education</a>
+                <a href="#work">Work</a>
               </Nav>
               <Nav>
-                <a href="#work">Work</a>
+                <a href="#education">Education</a>
               </Nav>
               <Nav>
                 <a href="#projects">Projects</a>

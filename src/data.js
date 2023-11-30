@@ -202,6 +202,53 @@ export default {
       id: "projects",
       items: [
         {
+          title: "Photography Portfolio",
+          date: "Nov 2023",
+          links: [
+            {
+              type: "github",
+              url: "https://github.com/IsItGreg/PhotoPortfolio",
+            },
+            {
+              type: "website",
+              url: "https://photo.gsme.dev/",
+            },
+          ],
+          about: [
+            {
+              header: "photo.gsme.dev",
+              text: [
+                "This is a portfolio of some of my photography from the past few years. I didn't really have a good way of sharing my favorite photos, so I figured it could be a fun project.",
+                "This was built using React, Sass, and Typescript and hosted on GitHub pages. It ended up being a great way to experiment with various design ideas and practice some front-end development skills.",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Grad School Projects",
+          date: "Jan 2021 - Dec 2022",
+          about: [
+            {
+              header: "Cooperative Robot Simulation",
+              text: [
+                "Designed a small simulation of robots trying to solve a goal using Markov Decision Processes and Q-Learning (Python)",
+              ],
+            },
+            {
+              header: "Image2Minecraft",
+              text: [
+                "Created a pipeline to convert 2D images into voxelized models within Minecraft (Python)",
+              ],
+            },
+            {
+              header: "Tablut AI",
+              text: [
+                "Worked to build and train an AI to play the game Tablut using reinforcement learning (Python)",
+              ],
+            },
+          ],
+        },
+        {
           title: "Cage Inventory Management System",
           date: "Jun 2020 - Dec 2020",
           links: [
@@ -243,12 +290,6 @@ export default {
         {
           title: "Freshman / Sophomore Projects",
           date: "Sep 2017 - Dec 2018",
-          links: [
-            {
-              type: "github",
-              url: "https://github.com/IsItGreg/gsme.dev",
-            },
-          ],
           about: [
             {
               header: "Ants and Doodlebugs",
